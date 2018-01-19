@@ -14,9 +14,13 @@ var WGobj =
         "affId": "storesapi",
         "lat": lat,
         "lng": long,
+        "srchOpt": '',
+        "nxtPrev": '',
         "requestType": "locator",
         "act": "fndStore",
         "view": "fndStoreJSON",
+        "devinf": '',
+        "appver": '',
     }
 
 
@@ -25,10 +29,11 @@ function WGAPI(){
     $.ajax({
         type: "POST",
         url: "https://services-qa.walgreens.com/api/stores/search",
-        processData: false,
         contentType: 'application/json',
-        data: JSON.stringify(WGobj),
+        data: WGobj,
     }).done(function(response){
         console.log(response)
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('ERROR', errorThrown)
     })
 }
