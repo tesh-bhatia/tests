@@ -30,7 +30,7 @@ function WGAPI(){
         type: "POST",
         url: "https://services-qa.walgreens.com/api/stores/search",
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "x-requested-with",
         },
         processData: false,
         contentType: 'application/json',
