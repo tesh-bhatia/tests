@@ -29,8 +29,12 @@ function WGAPI(){
     $.ajax({
         type: "POST",
         url: "https://services-qa.walgreens.com/api/stores/search",
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+        },
+        processData: false,
         contentType: 'application/json',
-        data: WGobj,
+        data: JSON.stringify(WGobj),
     }).done(function(response){
         console.log(response)
     }).fail(function(jqXHR, textStatus, errorThrown) {
