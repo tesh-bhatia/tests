@@ -1,9 +1,9 @@
 console.log('Connected')
-console.log(navigator.geolocation.getCurrentPosition(
+navigator.geolocation.getCurrentPosition(
     function(position){
-        return position.coords.latitude
+        console.log(position.coords.latitude);
     }
-));
+)
 
 var lat = '33.7763931';
 var long = '-84.38837740000001'
